@@ -6,15 +6,9 @@ Jsp+Servlet+Druid+JDBC-Template+JQuery+Js +EL/JSTL+BeanUtils
 
 服务器：Tomcat_8.5
 
-数据库：MySQL_5.6.46
+数据库：MySQL5.7
 
-开发工具：IDEA_2019.1.3
-
-## 项目Demo前端界面
-
-> http://web2.yoyling.com
->
-> 后端地址：http://web2.yoyling.com/admin_index.jsp
+开发工具：IDEA_2020.1
 
 ## 项目使用说明
 
