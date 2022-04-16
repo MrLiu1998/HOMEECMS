@@ -24,4 +24,20 @@ public class CartServiceImpl implements CartService {
     public void addCart(Cart cart) {
         dao.addCart(cart);
     }
+    @Override
+    public Cart findCartCountByCartId(int id) {
+        return dao.findCartCountByCartId(id);
+    }
+    @Override
+    public void deleteCart(int id) {
+        dao.deleteCart(id);
+    }
+    @Override
+    public int addnumber(int id) {
+        return dao.addnumber(id);
+    }
+    @Override
+    public int minnumber(int id) {
+        return dao.minnumber(id);
+    }
 }

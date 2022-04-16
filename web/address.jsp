@@ -107,6 +107,85 @@
         <div class="bc"><input type="submit" value="保存"/><input type="button" value="取消"/></div>
     </form>
 </div>
+<style>
+    .adddz2 {
+        width: 300px;
+        position: absolute;
+        top: 50%;
+        left: 38%;
+        margin-top: -310px;
+        margin-left: -150px;
+        z-index: 30;
+        background: #fff;
+        border: 1px solid #A10000;
+        padding: 30px;
+        display: none;
+    }
+    .adddz2 form input, .readd form input {
+        border: 1px solid #e0e0e0;
+        display: block;
+        margin-bottom: 15px;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        text-indent: 5px;
+    }
+
+    .adddz2 form input.on, .readd form input.on {
+        border: 1px solid #A10000;
+    }
+
+    .adddz2 form div.city select, .readd form div.city select {
+        width: 142px;
+        height: 40px;
+        line-height: 40px;
+        border: 1px solid #E0E0E0;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .adddz2 form div.city select:nth-child(odd), .readd form div.city select:nth-child(odd) {
+        margin-right: 10px;
+    }
+
+    .adddz2 form textarea, .readd form textarea {
+        width: 100%;
+        height: 50px;
+        padding-top: 10px;
+        text-indent: 5px;
+        margin-bottom: 15px;
+    }
+
+    .adddz2 form div.bc, .readd form div.bc {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .adddz2 form div.bc input, .readd form div.bc input {
+        display: inline-block;
+        width: 120px;
+        height: 36px;
+        line-height: 0px;
+        text-align: center;
+        background: #fff;
+        border: 1px solid #e6e6e6;
+    }
+
+    .adddz2 form div.bc input:nth-child(1), .readd form div.bc input:nth-child(1) {
+        background: #A10000;
+        color: #FFFFFF;
+    }
+</style>
+
+<div class="adddz2" style="top: 70%;">
+    <form action="${pageContext.request.contextPath}/updateAddressServlet?aid=${a.address_id}" method="post">
+        <input name="name" required type="text" placeholder="姓名" class="on"/>
+        <input name="phone" required type="text" placeholder="手机号"/>
+        <textarea name="address" required rows="" cols="" placeholder="详细地址"></textarea>
+        <div class="bc"><input type="submit" value="保存"/><input type="button" id="quxiao" value="取消"/></div>
+    </form>
+</div>
 <div class="readd">
     <form action="#" method="get"><input type="text" class="on" value="六六六"/><input type="text" value="157****0022"/>
         <div class="city"><select name="">
@@ -163,5 +242,16 @@
 <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/user.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    $(function () {
+        $("#updte").click(function () {
+            $(".adddz2").css("display","block")
+        })
+        $("#quxiao").click(function () {
+            $(".adddz2").css("display","none")
+            return false
+        })
+    )
+    })
 </body>
 </html>

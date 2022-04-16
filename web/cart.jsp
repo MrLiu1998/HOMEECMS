@@ -73,12 +73,12 @@
             <div class="price">￥${rs.product_price }.00</div>
             <div class="number">
             	<p class="num clearfix">
-            	<img class="fl sub" src="images/temp/sub.jpg">
+                    <a href="subProductQuantityInCart?id=${rs.cart_id}"><img class="fl sub" src="images/temp/sub.jpg"></a>
             	<span datasrc="${rs.cart_id }" class="fl">${rs.product_quantity }</span>
-            	<img class="fl add" src="images/temp/add.jpg"></p>
+                    <a  href="addProductQuantityInCart?id=${rs.cart_id}"><img class="fl add" src="images/temp/add.jpg"></a></p>
            </div>
             <div class="price sAll">￥${rs.product_price * rs.product_quantity }.00</div>
-            <div class="price"><a class="del" datasrc="${rs.cart_id }" href="#2">删除</a></div>
+            <div class="price"><a class="del" datasrc="${rs.cart_id }" href="deleteCartServlet?cid=${rs.cart_id}">删除</a></div>
         </div>
        
        </c:forEach>
@@ -104,7 +104,7 @@
 				}
 				
 			});
-			location.href="orderselect?eids="+str;
+			location.href="toOrderServletFromCart?eids="+str;
 	}
 </script>
 <div class="mask"></div>

@@ -56,4 +56,13 @@ public class AddressDaoImpl implements AddressDao {
             e.printStackTrace();
         }
     }
+    @Override
+    public void updateAddress(Address address) {
+        try {
+            String sql = "update tb_address set user_id=?,user_name=?,user_phone=?,user_address=?   where address_id = ?";
+            template.update(sql,address.getUser_id(),address.getUser_name(),address.getUser_phone(),address.getUser_address(),address.getAddress_id());
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+        }
+    }
 }

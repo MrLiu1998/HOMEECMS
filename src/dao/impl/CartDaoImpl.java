@@ -45,4 +45,44 @@ public class CartDaoImpl implements CartDao {
             e.printStackTrace();
         }
     }
+    @Override
+    public void deleteCart(int id) {
+        try {
+            String sql = "delete from tb_cart where cart_id = ?";
+            template.update(sql,id);
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+        }
+    }
+    @Override
+    public Cart findCartCountByCartId(int id) {
+        try {
+            String sql = "select * from tb_cart where cart_id = ?";
+            Cart c = template.queryForObject(sql, new BeanPropertyRowMapper<Cart>(Cart.class),id);
+            return c;
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    @Override
+    public int addnumber(int id) {
+        try {
+            String sql = "update tb_cart  set product_quantity = product_quantity+1   where cart_id = ?";
+            return template.update(sql, id);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+    @Override
+    public int minnumber(int id) {
+        try {
+            String sql = "update tb_cart  set product_quantity = product_quantity-1   where cart_id = ?";
+            return template.update(sql, id);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
 }

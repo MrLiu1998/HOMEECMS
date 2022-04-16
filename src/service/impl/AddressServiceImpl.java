@@ -29,4 +29,8 @@ public class AddressServiceImpl implements AddressService {
     public void delAddressById(int aid2) {
         dao.delAddressById(aid2);
     }
+    @Override
+    public void updateAddress(Address address) {
+        dao.updateAddress(address);
+    }
 }

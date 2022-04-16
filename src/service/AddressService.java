@@ -13,4 +13,6 @@ public interface AddressService {
     void addAddress(Address a);
 
     void delAddressById(int aid2);
+
+    void updateAddress(Address address);
 }

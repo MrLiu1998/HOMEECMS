@@ -30,7 +30,10 @@ public class LoginServlet extends HttpServlet {
 		
 		if(user != null && "1".equals(user.getUser_status())) {
 			HttpSession session = request.getSession();
-			
+
+			UserService userService =new UserServiceImpl();
+			User user1 = userService.findUserByUserName(user.getUser_name());
+			session.setAttribute("user_id", user1.getUser_id());
 			session.setAttribute("name", user);
 			session.setAttribute("isLogin", "1");
 			
